@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gbo自动启用
 // @namespace    https://api.luei.me
-// @version      1.1.1
+// @version      1.1.2
 // @description  自动检测并每3分钟启用一次被异常停用的账号
 // @author       luei
 // @match        *://hxff.g8b8o8.xyz/*
@@ -123,9 +123,7 @@
         }
 
         let enableUrl = "http://api.ggbboo.xyz/api_group/Account/updateAccountState";
-        let enableData = {username: username, sid: sid, is_sub: 1, state: 1};
-        ids.forEach(id => enableData["ids[]"] = ids); // 多个id
-
+        let enableData = {username: username, sid: sid, is_sub: 1, state: 1, "ids[]": ids};
         let resp = await postRequest(enableUrl, enableData);
 
         if (resp?.msg === "修改成功") {

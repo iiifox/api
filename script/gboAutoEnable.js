@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         gbo自动启用
 // @namespace    https://api.luei.me
-// @version      1.1.2
+// @version      1.1.3
 // @description  自动检测并每3分钟启用一次被异常停用的账号
 // @author       luei
 // @match        *://hxff.g8b8o8.xyz/*
+// @match        *://hxff.oog00.xyz/*
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
 // @connect      ggbboo.xyz

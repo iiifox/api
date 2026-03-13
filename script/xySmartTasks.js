@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         星悦智能任务
 // @namespace    https://api.luei.me/
-// @version      1.2.1
+// @version      1.2.2
 // @description  定时执行自动任务，同时遇到出码失败的账号自动转为充值中
 // @author       leui
 // @match        *://sdk.wy7l9.com/*
+// @match        *://mgr.udn1ys.com/*
 // @run-at       document-end
 // @grant        GM_registerMenuCommand
 // @grant        GM_unregisterMenuCommand
@@ -12,6 +13,7 @@
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
 // @connect      sdk.wy7l9.com
+// @connect      mgr.udn1ys.com
 // @updateURL    https://api.luei.me/script/xySmartTasks.js
 // @downloadURL  https://api.luei.me/script/xySmartTasks.js
 // ==/UserScript==

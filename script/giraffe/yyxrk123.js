@@ -4,10 +4,7 @@
 // @version      1.1.0
 // @description  狐狸登录页面注入pi1账号密码谷歌验证码
 // @author       luei
-// @match        http://47.97.179.243:8369/weblogin.aspx
-// @match        http://47.97.179.243:8369/WebLogin.aspx
-// @match        http://47.97.179.243:8368/weblogin.aspx
-// @match        http://47.97.179.243:8368/WebLogin.aspx
+// @match        http://115.29.174.100:8369/WebLogin.aspx
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_registerMenuCommand
@@ -27,8 +24,7 @@
             const currentHost = window.location.host;
             const currentPath = window.location.pathname.toLowerCase();
             return (
-                (currentHost === '47.97.179.243:8368' || currentHost === '47.97.179.243:8369') &&
-                currentPath === '/weblogin.aspx'
+                currentHost === '115.29.174.100:8369' && currentPath === '/weblogin.aspx'
             );
         } catch (e) {
             console.error('路径验证出错:', e);

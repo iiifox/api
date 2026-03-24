@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         长颈鹿导出(结算版)
 // @namespace    https://api.luei.me/
-// @version      1.0.1
+// @version      1.0.2
 // @description  长颈鹿内附Qb算账简易版
 // @author       luei
 // @match        *://115.29.174.100:8369/dltj.aspx*
@@ -19,7 +19,7 @@
         Stars: {name: ["I-Stars", "I-Stars02"]},
         陆颜: {name: ["I-Lyan"]},
         宙曳: {name: ["I-zyzy"]},
-        mandy: {name: ["I-mandy119"]},
+        mandy: {name: ["I-buxinxie"]},
         北辰: {name: ["I-beicheng"]},
         辣辣: {name: ["I-lala"], f: -0.002},
         my: {name: ["I-jiubie"]},

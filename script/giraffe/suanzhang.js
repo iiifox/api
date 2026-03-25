@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         长颈鹿导出(结算版)
 // @namespace    https://api.luei.me/
-// @version      1.0.3
+// @version      1.0.4
 // @description  长颈鹿内附Qb算账简易版
 // @author       luei
 // @match        *://115.29.174.100:8369/dltj.aspx*
@@ -30,6 +30,7 @@
         猫腻: {name: ["I-maoni"]},
         匿名: {name: ["I-niming"]},
         彭少辉: {name: ["I-hoang"]},
+        彭少辉: {name: ["I-long0629"]},
     };
 
     // ================== 数据缓存 ==================

@@ -31,6 +31,9 @@
         匿名: {name: ["I-niming"]},
         彭少辉: {name: ["I-hoang"]},
         long: {name: ["I-long0629"]},
+        糖糖: {name: ["l-ecc"]},
+        糖宝: {name: ["I-flora"]},
+        iiifox: {name: ["I-luei"]},
     };
 
     // ================== 数据缓存 ==================

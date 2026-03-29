@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         长颈鹿导出(结算版)
 // @namespace    https://api.luei.me/
-// @version      1.0.5
+// @version      1.0.6
 // @description  长颈鹿内附Qb算账简易版
 // @author       luei
 // @match        *://115.29.174.100:8369/dltj.aspx*

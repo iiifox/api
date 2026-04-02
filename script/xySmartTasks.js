@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         星悦智能任务
 // @namespace    https://api.luei.me/
-// @version      1.2.2
+// @version      1.3.0
 // @description  定时执行自动任务，同时遇到出码失败的账号自动转为充值中
-// @author       leui
+// @author       luei
 // @match        *://sdk.wy7l9.com/*
 // @match        *://mgr.udn1ys.com/*
 // @run-at       document-end
@@ -12,8 +12,7 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
-// @connect      sdk.wy7l9.com
-// @connect      mgr.udn1ys.com
+// @connect      *
 // @updateURL    https://api.luei.me/script/xySmartTasks.js
 // @downloadURL  https://api.luei.me/script/xySmartTasks.js
 // ==/UserScript==
@@ -22,6 +21,7 @@
     'use strict';
 
     // ========== 配置区 ==========
+    const BASE_URL = location.origin;
     // 分页 每页数量
     const PAGE_SIZE = 20;
     // 智能任务的键名(存放自动任务刷新时间，默认30分钟)
@@ -83,7 +83,7 @@
     // ========== 分页串行获取所有自动任务ID等相关参数 ==========
     async function getPrefabTaskMap() {
         // 获取所有页的返回结果
-        const prefabTasksUrl = "https://sdk.wy7l9.com/api/v1/system/prefab-tasks"
+        const prefabTasksUrl = `${BASE_URL}/api/v1/system/prefab-tasks`
         const first = await fetchPageData(prefabTasksUrl, 1);
         const requests = [];
         for (let i = 2; i <= Math.ceil(first.data.total / PAGE_SIZE); i++) {
@@ -95,7 +95,7 @@
         const map = new Map();
         for (const res of all) {
             for (const item of res.data.list) {
-                let limitNum = item.limitNum == 0? 0: item.limitNum - item.arriveNum;
+                let limitNum = item.limitNum == 0 ? 0 : item.limitNum - item.arriveNum;
                 map.set(item.accountId, {
                     id: item.accountId,
                     status: item.status,
@@ -120,7 +120,7 @@
         try {
             const prefabMap = await getPrefabTaskMap();
 
-            const accountUrl = "https://sdk.wy7l9.com/api/v1/system/accounts";
+            const accountUrl = `${BASE_URL}/api/v1/system/accounts`
             const first = await fetchPageData(accountUrl, 1);
             const reqs = [];
             for (let i = 2; i <= Math.ceil(first.data.total / PAGE_SIZE); i++) {
@@ -187,7 +187,7 @@
         // 状态等于3说明出码失败，需要重开一下拉单
         if (status === 3) {
             const patchRes = await gmFetch(
-                'https://sdk.wy7l9.com/api/v1/system/accounts',
+                `${BASE_URL}/api/v1/system/accounts`,
                 {
                     method: 'PATCH',
                     headers: {
@@ -217,7 +217,7 @@
         };
         try {
             const taskRes = await gmFetch(
-                'https://sdk.wy7l9.com/api/v1/system/prefab-tasks',
+                `${BASE_URL}/api/v1/system/prefab-tasks`,
                 {
                     method: 'POST',
                     headers: {

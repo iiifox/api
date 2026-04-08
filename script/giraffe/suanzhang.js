@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         长颈鹿导出(结算版)
 // @namespace    https://api.luei.me/
-// @version      1.0.6
+// @version      1.0.7
 // @description  长颈鹿内附Qb算账简易版
 // @author       luei
 // @match        *://115.29.174.100:8369/dltj.aspx*
@@ -102,7 +102,7 @@
             </div>
             <div>
                 折扣：
-                <input id="fox-discount" value="0.895" style="width:60px">
+                <input id="fox-discount" value="0.905" style="width:60px">
             </div>
             <button id="fox-calc">计算</button>
             <pre id="fox-output" style="max-height:300px;overflow:auto;"></pre>
